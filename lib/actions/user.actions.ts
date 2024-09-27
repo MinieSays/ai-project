@@ -1,4 +1,4 @@
-"use server"
+"use server";
 
 import { revalidatePath } from "next/cache";
 
@@ -20,7 +20,7 @@ export async function createUser(user: CreateUserParams) {
 }
 
 // READ
-export async function getUserById(userId: string) {
+export async function getUserById(userId: string | undefined) {
   try {
     await connectToDatabase();
 
@@ -74,7 +74,7 @@ export async function deleteUser(clerkId: string) {
 }
 
 // USE CREDITS
-export async function updateCredits(userId: string, creditFee: number) {
+export async function updateCredits(userId: string | undefined, creditFee: number) {
   try {
     await connectToDatabase();
 

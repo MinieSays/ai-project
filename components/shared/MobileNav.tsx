@@ -1,10 +1,6 @@
-"use client"
+"use client";
 
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { navLinks } from "@/constants";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
@@ -13,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 
 const MobileNav = () => {
-const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <header className="header">
@@ -54,9 +50,14 @@ const pathname = usePathname()
                     return (
                       <li
                         key={link.route}
-                        className={`${isActive && "gradient-text"} p-18 flex whitespace-nowrap text-dark-700`}
+                        className={`${
+                          isActive && "gradient-text"
+                        } p-18 flex whitespace-nowrap text-dark-700`}
                       >
-                        <Link className="sidebar-link cursor-pointer" href={link.route}>
+                        <Link
+                          className="sidebar-link cursor-pointer"
+                          href={link.route}
+                        >
                           <Image
                             src={link.icon}
                             alt="logo"
@@ -75,10 +76,10 @@ const pathname = usePathname()
         </SignedIn>
 
         <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
-              <Link href="/sign-in">Login</Link>
-            </Button>
-          </SignedOut>
+          <Button asChild className="button bg-blue-gradient bg-cover">
+            <Link href="/sign-in">Login</Link>
+          </Button>
+        </SignedOut>
       </nav>
     </header>
   );
