@@ -1,20 +1,20 @@
-import { Collection } from "@/components/shared/Collection"
-import { navLinks } from "@/constants"
-import { getAllImages } from "@/lib/actions/image.actions"
-import Image from "next/image"
-import Link from "next/link"
+import { Collection } from "@/components/shared/Collection";
+import { navLinks } from "@/constants";
+import { getAllImages } from "@/lib/actions/image.actions";
+import Image from "next/image";
+import Link from "next/link";
 
 const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
-  const searchQuery = (searchParams?.query as string) || '';
+  const searchQuery = (searchParams?.query as string) || "";
 
-  const images = await getAllImages({ page, searchQuery})
+  const images = await getAllImages({ page, searchQuery });
 
   return (
     <>
       <section className="home">
         <h1 className="home-heading">
-          Unleash Your Creative Vision with Imaginify
+          Unleash Your Creative Vision with ImaginAI
         </h1>
         <ul className="flex-center w-full gap-20">
           {navLinks.slice(1, 5).map((link) => (
@@ -31,9 +31,14 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           ))}
         </ul>
       </section>
-
+      <div className="aspect-w-8 aspect-h-4 mb-6 mt-6">
+        <iframe
+          src="https://www.loom.com/embed/9d8fe3d74b564c0a93f0d41e1b001e66?sid=95dc4fea-986f-4690-b791-21541751d631"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      </div>
       <section className="sm:mt-12">
-        <Collection 
+        <Collection
           hasSearch={true}
           images={images?.data}
           totalPages={images?.totalPage}
@@ -41,7 +46,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         />
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
