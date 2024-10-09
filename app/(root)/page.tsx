@@ -31,6 +31,11 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           ))}
         </ul>
       </section>
+      <div className="mt-4">
+          <h3 className="text-2xl font-semibold text-center">Login Credentials for Guest Account </h3>
+          <h3 className="text-1xl font-semibold text-center">Email: miniedomains@gmail.com </h3>
+          <h3 className="text-1xl font-semibold text-center">Password: Purple123$$ </h3>
+      </div>
       <div className="aspect-w-8 aspect-h-4 mb-6 mt-6">
         <iframe
           src="https://www.loom.com/embed/9d8fe3d74b564c0a93f0d41e1b001e66?sid=95dc4fea-986f-4690-b791-21541751d631"
